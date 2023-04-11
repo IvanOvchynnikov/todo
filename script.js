@@ -1,6 +1,14 @@
 
 let tasks=[]
 
+const inputField = document.getElementById("taskAdd");
+const buttonMain = document.getElementById("add");
+
+inputField.addEventListener('keyup', function(event){
+    if (event.key === 'Enter') {
+        buttonMain.click();
+    }
+})
 
 document.getElementById("add").onclick = () => {
     let li = document.createElement("li");
@@ -54,3 +62,4 @@ function close_click(button){
 
 
 }
+
