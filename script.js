@@ -1,5 +1,4 @@
-
-let tasks=[]
+const tasks=[]
 
 const inputField = document.getElementById("taskAdd");
 const buttonMain = document.getElementById("add");
@@ -18,7 +17,12 @@ document.getElementById("add").onclick = () => {
         alert("Будь ласка, введіть задачу")
         return;
     }
-    let t=document.createTextNode(text);
+    let t=document.createElement('div');
+    t.className="task_text";
+    let paragraphElement=document.createElement('p');
+    paragraphElement.textContent=text;
+    t.appendChild(paragraphElement);
+
     let cur_task=document.createElement("li");
     cur_task.setAttribute("class","task");
     cur_task.appendChild(t);
@@ -45,7 +49,11 @@ function close_click(button){
     console.log(tasks)
     for(let i=0; i<tasks.length; i++)
     {
-        let t=document.createTextNode(tasks[i].childNodes[0].data);
+        let t=document.createElement('div');
+        let paragraphElement=document.createElement('p');
+        paragraphElement.textContent=tasks[i].childNodes[0].childNodes[0].textContent;
+        t.appendChild(paragraphElement);
+        t.className="task_text";
         let cur_task=document.createElement("li");
         cur_task.setAttribute("class","task");
         cur_task.appendChild(t);
