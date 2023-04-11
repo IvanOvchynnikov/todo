@@ -116,6 +116,7 @@ ul {
     width: 90%;
     text-align: center;
     background-color: #37ADB2;
+    border-radius: 10px;
     font-size: 20px;
     height: 50px;
     display: flex;
